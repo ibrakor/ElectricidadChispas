@@ -8,16 +8,11 @@ public class Sociedades implements Clientes {
     private String poblacion;
     private String provincia;
     private String email;
-    private Integer telefono;
+    private String telefono;
 
     @Override
-    public Integer getCodcliente() {
-        return codcliente;
-    }
-
-    @Override
-    public void setCodcliente(Integer codcliente) {
-
+    public String getCodcliente() {
+        return cif;
     }
 
     @Override
@@ -26,38 +21,8 @@ public class Sociedades implements Clientes {
     }
 
     @Override
-    public void setNombre(String nombre) {
-
-    }
-
-    @Override
-    public String getApellido() {
-        return null;
-    }
-
-    @Override
-    public void setApellido(String apellido) {
-
-    }
-
-    @Override
-    public String getDniCif() {
-        return cif;
-    }
-
-    @Override
-    public void setDniCif(String dniCif) {
-
-    }
-
-    @Override
     public String getDireccion() {
         return direccion;
-    }
-
-    @Override
-    public void setDireccion(String direccion) {
-
     }
 
     @Override
@@ -65,8 +30,59 @@ public class Sociedades implements Clientes {
         return poblacion;
     }
 
-    @Override
-    public void setPoblacion(String poblacion) {
+    public void setCodcliente(Integer codcliente) {
+        this.codcliente = codcliente;
+    }
 
+    public String getRazonsocial() {
+        return razonsocial;
+    }
+
+    public void setRazonsocial(String razonsocial) {
+        this.razonsocial = razonsocial;
+    }
+
+    public String getCif() {
+        return cif;
+    }
+
+    public void setCif(String cif) {
+        this.cif = cif;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public void setPoblacion(String poblacion) {
+        this.poblacion = poblacion;
+    }
+
+    public void setProvincia(String provincia) {
+        this.provincia = provincia;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    @Override
+    public String getProvincia() {
+        return provincia;
+    }
+
+    @Override
+    public String getEmail() {
+        return email;
+    }
+
+    @Override
+    public String getTelefono() {
+        return telefono;
     }
 }
+

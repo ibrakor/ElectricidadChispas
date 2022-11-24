@@ -1,7 +1,7 @@
 package com.ibrakor.ElectricidadChispas;
 
 public class Autonomos implements Clientes {
-    private Integer codcliente;
+    private String codcliente;
     private String nombre;
     private String apellido;
     private String dni;
@@ -9,46 +9,16 @@ public class Autonomos implements Clientes {
     private String poblacion;
     private String provincia;
     private String email;
-    private Integer telefono;
+    private String telefono;
 
     @Override
-    public Integer getCodcliente() {
-        return null;
-    }
-
-    @Override
-    public void setCodcliente(Integer codcliente) {
-
-    }
-
-    @Override
-    public String getNombre() {
-        return nombre;
-    }
-
-    @Override
-    public void setNombre(String nombre) {
-
-    }
-
-    @Override
-    public String getApellido() {
-        return apellido;
-    }
-
-    @Override
-    public void setApellido(String apellido) {
-
-    }
-
-    @Override
-    public String getDniCif() {
+    public String getCodcliente() {
         return dni;
     }
 
     @Override
-    public void setDniCif(String dniCif) {
-
+    public String getNombre() {
+        return nombre+" "+apellido;
     }
 
     @Override
@@ -57,17 +27,67 @@ public class Autonomos implements Clientes {
     }
 
     @Override
-    public void setDireccion(String direccion) {
-
-    }
-
-    @Override
     public String getPoblacion() {
         return poblacion;
     }
 
     @Override
-    public void setPoblacion(String poblacion) {
+    public String getProvincia() {
+        return provincia;
+    }
 
+    @Override
+    public String getEmail() {
+        return email;
+    }
+
+    @Override
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setCodcliente(String codcliente) {
+        this.codcliente = codcliente;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public String getDni() {
+        return dni;
+    }
+
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public void setPoblacion(String poblacion) {
+        this.poblacion = poblacion;
+    }
+
+    public void setProvincia(String provincia) {
+        this.provincia = provincia;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
 }
+
