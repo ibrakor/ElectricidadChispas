@@ -1,6 +1,6 @@
 package com.ibrakor.ElectricidadChispas;
 
-public class Productos {
+public class Productos  {
     private Integer codproducto;
     private String nombre;
     private String marca;
