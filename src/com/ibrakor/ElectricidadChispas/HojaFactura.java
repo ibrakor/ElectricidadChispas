@@ -6,7 +6,7 @@ public class HojaFactura {
     private int codfactura;
     private Date fechafactura;
     private Clientes cliente;
-    private Vendible productos;
+    private String productos;
     private int basaimponible;
     private int total;
 
@@ -34,11 +34,11 @@ public class HojaFactura {
         this.cliente = cliente;
     }
 
-    public Vendible getProductos() {
+    public String getProductos() {
         return productos;
     }
 
-    public void setProductos(Vendible productos) {
+    public void setProductos(String productos) {
         this.productos = productos;
     }
 
@@ -58,6 +58,4 @@ public class HojaFactura {
         this.total = total;
     }
 }
-
-
 
