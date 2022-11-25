@@ -16,6 +16,7 @@ Interfaz, clase, metodo, atributo, instancia.
 ## Disclaimer
 No he conseguido la parte de la impresion en la clase que se pedia ya que me he contrado con varios problemas,
 al ser void supuestamente una deberia devovler nada, y cuando le introduzco un main para poder hacer la impresion en esa clase, salen muchos problemas que ni el IDE es capaz de detallarme de donde proviene el problema.
+He tenido un problema tambien con las branches, al principio a pesar de haber creado otra y estar trabajando en ella, master se escribia tambien pero ya esta arreglado.
 
 ## Objetivos
 
