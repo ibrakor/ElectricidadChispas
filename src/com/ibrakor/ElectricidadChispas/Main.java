@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+
         Autonomos aut1 = new Autonomos();
         aut1.setNombre("Maria");
         aut1.setApellido("Perez");
@@ -33,8 +34,7 @@ public class Main {
         prod1.setModelo("B22");
         prod1.setPrecio(20);
         prod1.setTipoiva(10);
-
-        Productos prod2 = new Productos();
+/*      Productos prod2 = new Productos();
         prod2.setCodproducto(234382);
         System.out.println("Ingrese el nombre del producto:");
         prod2.setNombre(sc.next());
@@ -46,6 +46,9 @@ public class Main {
         prod2.setPrecio(sc.nextInt());
         System.out.println("Ingrese el tipo de iva del producto:");
         prod2.setTipoiva(sc.nextInt());
+
+ */
+
 
         Servicios serv1 = new Servicios();
         System.out.println("Ingrese el código del servicio:");
@@ -61,16 +64,25 @@ public class Main {
         serv2.setTipoiva(21);
 
         HojaFactura factura1 = new HojaFactura();
+        int totalf1= serv1.getPrecio() + factura1.getTotal();
         factura1.setCodfactura(8434);
         factura1.setFechafactura(new Date(122, 12, 1));
         factura1.setCliente(aut1);
-        factura1.setProductos(prod1);
-        factura1.setBasaimponible(prod1.getPrecio());
-        factura1.setTotal((prod1.getPrecio())+(prod1.getTipoiva()*100));
+        factura1.setProductos(serv1);
+        factura1.setBasaimponible(serv1.getPrecio());
+        factura1.setTotal(totalf1);
 
         System.out.println("Número factura "+ factura1.getCodfactura());
         System.out.println("Fecha: "+ factura1.getFechafactura());
-        System.out.println("Dni "+ factura1.getCliente().getCodcliente());
+        System.out.println("Dni: "+ factura1.getCliente().getCodcliente());
+        System.out.println("Nombre: "+ factura1.getCliente().getNombre());
+        System.out.println("Nombre producto: "+ factura1.getProductos().getNombre());
+        System.out.println("ID producto: "+ factura1.getProductos().getCodproducto());
+        System.out.println("Base imponible: "+ factura1.getBasaimponible());
+        System.out.println("Total: "+totalf1);
+
+
+
 
     }
 }
