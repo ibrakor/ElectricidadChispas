@@ -1,7 +1,8 @@
-package com.ibrakor.data;
+package com.ibrakor.ElectricidadChispas.data;
 
-import com.ibrakor.ElectricidadChispas.Clientes;
+import com.ibrakor.ElectricidadChispas.domain.models.Clientes;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.TreeMap;
 
@@ -28,7 +29,7 @@ public class MemCustomerDataStore implements CustomerDataStore{
 
     @Override
     public List<Clientes> getAllCustomers() {
-        return dataStore.values().stream().toList();
+        return new ArrayList<>(dataStore.values());
     }
 
     @Override

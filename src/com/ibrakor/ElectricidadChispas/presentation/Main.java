@@ -1,4 +1,7 @@
-package com.ibrakor.ElectricidadChispas;
+package com.ibrakor.ElectricidadChispas.presentation;
+
+import com.ibrakor.ElectricidadChispas.domain.models.*;
+import com.ibrakor.ElectricidadChispas.domain.usecase.AddCustomerUseCase;
 
 import java.util.Date;
 import java.util.Scanner;
@@ -17,6 +20,7 @@ public class Main {
         aut1.setProvincia("Madrid");
         aut1.setEmail("maria_perez@correo.com");
         aut1.setTelefono("914553210");
+
 //Creacion de una sociedad
         Sociedades s1 = new Sociedades();
         s1.setCif("D90831215");
@@ -26,6 +30,11 @@ public class Main {
         s1.setProvincia("Valencia");
         s1.setEmail("arroz@arroz.com");
         s1.setTelefono("92004699");
+
+        AddCustomerUseCase addCustomerUseCase = new AddCustomerUseCase();
+        addCustomerUseCase.execute(aut1);
+        addCustomerUseCase.execute(s1);
+
 //Creacion de uno de los dos productos
         Productos prod1 = new Productos();
         prod1.setCodproducto(242482);

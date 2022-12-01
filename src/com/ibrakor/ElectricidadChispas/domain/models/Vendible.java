@@ -1,4 +1,4 @@
-package com.ibrakor.ElectricidadChispas;
+package com.ibrakor.ElectricidadChispas.domain.models;
 
 public interface Vendible {
     Integer getCodproducto();

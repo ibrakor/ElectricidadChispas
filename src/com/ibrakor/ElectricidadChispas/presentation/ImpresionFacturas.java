@@ -1,4 +1,6 @@
-package com.ibrakor.ElectricidadChispas;
+package com.ibrakor.ElectricidadChispas.presentation;
+
+import com.ibrakor.ElectricidadChispas.domain.models.HojaFactura;
 
 public class ImpresionFacturas {
 

@@ -1,6 +1,6 @@
-package com.ibrakor.data;
+package com.ibrakor.ElectricidadChispas.data;
 
-import com.ibrakor.ElectricidadChispas.Clientes;
+import com.ibrakor.ElectricidadChispas.domain.models.Clientes;
 
 import java.util.List;
 

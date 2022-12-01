@@ -1,4 +1,4 @@
-package com.ibrakor.ElectricidadChispas;
+package com.ibrakor.ElectricidadChispas.domain.models;
 
 public class Productos implements Vendible {
     private Integer codproducto;
