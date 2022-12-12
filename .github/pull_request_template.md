@@ -11,6 +11,8 @@
 Interfaz, clase, metodo, atributo, instancia.
 ## Screenshots or Video
 
+![image](https://user-images.githubusercontent.com/104716025/207118098-f17d8027-9e19-4a2f-8308-d98a83e254ac.png)
+![image](https://user-images.githubusercontent.com/104716025/207118161-fcaffd7c-dbbe-4ecd-a266-1c4fb85a44b5.png)
 
 
 ## Disclaimer
