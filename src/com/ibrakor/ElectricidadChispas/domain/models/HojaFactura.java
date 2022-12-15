@@ -1,12 +1,15 @@
 package com.ibrakor.ElectricidadChispas.domain.models;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class HojaFactura {
     private int codfactura;
     private Date fechafactura;
     private Cliente cliente;
     private String productos;
+    private List<Vendible> vendibles = new ArrayList<>();
     private int basaimponible;
     private int total;
 
@@ -56,6 +59,9 @@ public class HojaFactura {
 
     public void setTotal(int total) {
         this.total = total;
+    }
+    public void addVendible(Vendible vendible) {
+        this.vendibles.add(vendible);
     }
 }
 

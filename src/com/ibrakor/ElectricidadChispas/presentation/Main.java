@@ -1,7 +1,7 @@
 package com.ibrakor.ElectricidadChispas.presentation;
 
 import com.ibrakor.ElectricidadChispas.domain.models.*;
-import com.ibrakor.ElectricidadChispas.domain.usecase.AddCustomerUseCase;
+import com.ibrakor.ElectricidadChispas.domain.usecase.*;
 
 import java.util.Date;
 import java.util.Scanner;
@@ -13,8 +13,7 @@ public class Main {
         Autonomos aut1 = new Autonomos();
         aut1.setNombre("Maria");
         aut1.setApellido("Perez");
-        System.out.println("Ingrese el DNI cliente:");
-        aut1.setDni(sc.next());
+        aut1.setCodcliente("983489K");
         aut1.setDireccion("Calle Falsa");
         aut1.setPoblacion("Madrid");
         aut1.setProvincia("Madrid");
@@ -34,6 +33,10 @@ public class Main {
         AddCustomerUseCase addCustomerUseCase = new AddCustomerUseCase();
         addCustomerUseCase.execute(aut1);
         addCustomerUseCase.execute(s1);
+
+
+private void crearVendibles() {
+
 
 //Creacion de uno de los dos productos
         Productos prod1 = new Productos();
@@ -59,7 +62,7 @@ public class Main {
         //Creacion de uno de los dos servicios
 
         Servicios serv1 = new Servicios();
-        System.out.println("Ingrese el código del servicio:");
+        serv1.setCodservicio(6438);
         serv1.setCodservicio(sc.nextInt());
         serv1.setNombre("Mantenimiento Electricidad.");
         serv1.setPrecio(200);
@@ -71,43 +74,48 @@ public class Main {
         serv2.setNombre("Revision Electricidad.");
         serv2.setPrecio(100);
         serv2.setTipoiva(21);
+      AddItemUseCase addItemUseCase = new AddItemUseCase();
+      addItemUseCase.execute(serv2);
+      addItemUseCase.execute(serv1);
+      addItemUseCase.execute(prod1);
+      addItemUseCase.execute(prod2);
+
+        }
+        private void CrearFactura(){
+
+
 //Creacion de una factura con cliente siendo un autonomo y un producto y un servicio
         HojaFactura factura1 = new HojaFactura();
-        int basesf1= serv1.getPrecio() + prod1.getPrecio();
-        int totalf1= (int) ((basesf1 * 0.21) + basesf1);
-        factura1.setCodfactura(8434);
-        factura1.setFechafactura(new Date(122, 12, 1));
-        factura1.setCliente(aut1);
-        factura1.setProductos(serv1.getNombre()+" Id: "+serv1.getCodproducto() + "\n"+prod1.getNombre()+" Id: "+prod1.getCodproducto());
-        factura1.setBasaimponible(basesf1);
-        factura1.setTotal(totalf1);
-//Impresion de la primera factura
-        System.out.println("Codigo de factura: "+factura1.getCodfactura());
-        System.out.println("Fecha: "+factura1.getFechafactura()+"\n-----------------------");
-        System.out.println("Cliente: "+factura1.getCliente().getCodcliente()+" "+factura1.getCliente().getNombre()+"\n"+factura1.getCliente().getDireccion()+"\n"+factura1.getCliente().getPoblacion()+"\n"+factura1.getCliente().getProvincia()+"\nEmail: "+factura1.getCliente().getEmail());
-        System.out.println("Productos: "+"\n"+factura1.getProductos()+"\nTipo de IVA: "+serv2.getTipoiva()+"%");
-        System.out.println("Basa imponible: "+factura1.getBasaimponible()+"\n-----------------------");
-        System.out.println("Total: "+factura1.getTotal()+"\n-----------------------");
-//Creacion de una factura con cliente siendo una sociedad y un producto y un servicio diferentes a la anterior
+        factura1.setCodfactura(1);
+        factura1.setFechafactura(new Date());
+        factura1.setBasaimponible(30);
+        factura1.setTotal(120);
 
-        HojaFactura factura2 = new HojaFactura();
-        int basesf2= serv2.getPrecio() + prod2.getPrecio();
-        int totalf2= (int) ((basesf2 * 0.21) + basesf2);
-        factura2.setCodfactura(137844);
-        factura2.setFechafactura(new Date(122, 12, 1));
-        factura2.setCliente(s1);
-        factura2.setProductos(serv2.getNombre()+" Id: "+serv2.getCodproducto() + "\n"+prod2.getNombre()+" Id: "+prod2.getCodproducto());
-        factura2.setBasaimponible(basesf2);
-        factura2.setTotal(totalf2);
-//Impresion de la segunda factura
+        GetCustomerUseCase getCustomerUseCase = new GetCustomerUseCase();
+        Cliente cliente = getCustomerUseCase.execute("983489K");
 
-        System.out.println("Codigo de factura: "+factura2.getCodfactura());
-        System.out.println("Fecha: "+factura2.getFechafactura()+"\n-----------------------");
-        System.out.println("Cliente: "+factura2.getCliente().getCodcliente()+" "+factura2.getCliente().getNombre()+"\n"+factura2.getCliente().getDireccion()+"\n"+factura2.getCliente().getPoblacion()+"\n"+factura2.getCliente().getProvincia()+"\nEmail: "+factura2.getCliente().getEmail());
-        System.out.println("Productos: "+"\n"+factura2.getProductos()+"\nTipo de IVA: "+serv2.getTipoiva()+"%");
-        System.out.println("Basa imponible: "+factura2.getBasaimponible()+"\n-----------------------");
-        System.out.println("Total: "+factura2.getTotal()+"\n-----------------------");
+        factura1.setCliente(cliente);
 
+        GetItemUseCase getItemUseCase = new GetItemUseCase();
+        Vendible prod1 = getItemUseCase.execute(242482);
+        Vendible serv1 = getItemUseCase.execute(6438);
+
+        factura1.addVendible(prod1);
+        factura1.addVendible(serv1);
+
+        AddFacturaUseCase addFacturaUseCase = new AddFacturaUseCase();
+        addFacturaUseCase.execute(factura1);
+
+        }
+        private void mostrarFactura() {
+            //Recupero la factura
+            GetFacturaUseCase getFacturaUseCase = new GetFacturaUseCase();
+            HojaFactura factura1 = getFacturaUseCase.execute(1);
+
+            //Imprimo la factura
+            ImpresionFacturas impresionFacturas = new ImpresionFacturas();
+            impresionFacturas.print(factura1);
+        }
 
 
 
