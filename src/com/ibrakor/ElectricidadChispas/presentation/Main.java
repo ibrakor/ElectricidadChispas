@@ -8,31 +8,41 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Main main = new Main();
+        main.crearClientes();
+        main.crearVendibles();
+        main.crearFactura();
+        main.mostrarFactura();
+    }
+    Scanner sc = new Scanner(System.in);
+        private void crearClientes() {
 //Creacion de un autonomo (No he puesto que todos los datos se lean con scanner porque hace las pruebas muy lentas)
-        Autonomos aut1 = new Autonomos();
-        aut1.setNombre("Maria");
-        aut1.setApellido("Perez");
-        aut1.setCodcliente("983489K");
-        aut1.setDireccion("Calle Falsa");
-        aut1.setPoblacion("Madrid");
-        aut1.setProvincia("Madrid");
-        aut1.setEmail("maria_perez@correo.com");
-        aut1.setTelefono("914553210");
+            Autonomos aut1 = new Autonomos();
+            aut1.setNombre("Maria");
+            aut1.setApellido("Perez");
+            aut1.setCodcliente("983489K");
+            aut1.setDireccion("Calle Falsa");
+            aut1.setPoblacion("Madrid");
+            aut1.setProvincia("Madrid");
+            aut1.setEmail("maria_perez@correo.com");
+            aut1.setTelefono("914553210");
 
 //Creacion de una sociedad
-        Sociedades s1 = new Sociedades();
-        s1.setCif("D90831215");
-        s1.setRazonsocial("Arroz S.A");
-        s1.setDireccion("Calle rio");
-        s1.setPoblacion(" Valencia");
-        s1.setProvincia("Valencia");
-        s1.setEmail("arroz@arroz.com");
-        s1.setTelefono("92004699");
+            Sociedades s1 = new Sociedades();
+            s1.setCif("D90831215");
+            s1.setRazonsocial("Arroz S.A");
+            s1.setDireccion("Calle rio");
+            s1.setPoblacion(" Valencia");
+            s1.setProvincia("Valencia");
+            s1.setEmail("arroz@arroz.com");
+            s1.setTelefono("92004699");
 
-        AddCustomerUseCase addCustomerUseCase = new AddCustomerUseCase();
-        addCustomerUseCase.execute(aut1);
-        addCustomerUseCase.execute(s1);
+            AddCustomerUseCase addCustomerUseCase = new AddCustomerUseCase();
+            addCustomerUseCase.execute(aut1);
+            addCustomerUseCase.execute(s1);
+
+
+        }
 
 
 private void crearVendibles() {
@@ -81,7 +91,7 @@ private void crearVendibles() {
       addItemUseCase.execute(prod2);
 
         }
-        private void CrearFactura(){
+        private void crearFactura(){
 
 
 //Creacion de una factura con cliente siendo un autonomo y un producto y un servicio
@@ -120,4 +130,6 @@ private void crearVendibles() {
 
 
     }
-}
+
+
+
