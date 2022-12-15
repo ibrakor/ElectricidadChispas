@@ -1,15 +1,13 @@
 package com.ibrakor.ElectricidadChispas.domain.usecase;
 
+import com.ibrakor.ElectricidadChispas.data.CustomerDataStore;
 import com.ibrakor.ElectricidadChispas.domain.models.Clientes;
 
 public class UpdateCustomerUseCase {
-    private CustomerDataStore customerDataStore;
+    private CustomerDataStore dataStore = CustomerDataStore.getInstance();
 
-    public UpdateCustomerUseCase(CustomerDataStore customerDataStore) {
-        this.customerDataStore = customerDataStore;
-    }
+    public void execute(Clientes clientes) {
+        dataStore.save(clientes);
 
-    public void execute(Clientes cliente) {
-        customerDataStore.updateCustomer(cliente);
     }
 }
