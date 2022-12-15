@@ -5,15 +5,13 @@ import com.ibrakor.ElectricidadChispas.domain.models.HojaFactura;
 public class ImpresionFacturas {
 
 
-    private HojaFactura factura1;
-
-    public void print(ImpresionFacturas Factura1) {
-            System.out.println("Codigo: "+factura1.getCodfactura());
-            System.out.println("Fecha: "+factura1.getFechafactura());
-            System.out.println("Cliente: "+factura1.getCliente().getNombre());
-            System.out.println("Productos: "+factura1.getProductos());
-            System.out.println("Basaimponible: "+factura1.getBasaimponible());
-            System.out.println("Total: "+factura1.getTotal());
+    public void print(HojaFactura hojaFactura) {
+            System.out.println("Codigo: "+hojaFactura.getCodfactura());
+            System.out.println("Fecha: "+hojaFactura.getFechafactura());
+            System.out.println("Cliente: "+hojaFactura.getCliente().getNombre());
+            System.out.println("Productos: "+hojaFactura.getProductos());
+            System.out.println("Basaimponible: "+hojaFactura.getBasaimponible());
+            System.out.println("Total: "+hojaFactura.getTotal());
 
         }
     }

@@ -1,7 +1,5 @@
 package com.ibrakor.ElectricidadChispas.domain.usecase;
 
-import com.ibrakor.ElectricidadChispas.data.CustomerDataStore;
-import com.ibrakor.ElectricidadChispas.data.MemCustomerDataStore;
 import com.ibrakor.ElectricidadChispas.domain.models.Clientes;
 
 import java.util.List;
