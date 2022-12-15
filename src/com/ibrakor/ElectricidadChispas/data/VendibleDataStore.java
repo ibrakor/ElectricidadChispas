@@ -10,11 +10,11 @@ public class VendibleDataStore {
 
     private TreeMap<Integer, Vendible> dataStore = new TreeMap<>();
 
-    public void guardar(Vendible vendible) {
+    public void save(Vendible vendible) {
         dataStore.put(vendible.getCodproducto(), vendible);
     }
 
-    public void eliminar(Vendible vendible) {
+    public void delete(Vendible vendible) {
         dataStore.remove(vendible.getCodproducto());
     }
 

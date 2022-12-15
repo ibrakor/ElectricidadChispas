@@ -3,10 +3,12 @@ package com.ibrakor.ElectricidadChispas.domain.usecase;
 import com.ibrakor.ElectricidadChispas.data.CustomerDataStore;
 import com.ibrakor.ElectricidadChispas.domain.models.Cliente;
 
-public class DeleteCustomerUseCase {
+import java.util.List;
+
+public class GetCustomersUseCase {
     private CustomerDataStore dataStore = CustomerDataStore.getInstance();
 
-    public void execute(Cliente cliente) {
-        dataStore.delete(cliente);
+    public List<Cliente> execute() {
+        return dataStore.getAll();
     }
 }

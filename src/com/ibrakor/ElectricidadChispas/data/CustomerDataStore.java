@@ -1,25 +1,25 @@
 package com.ibrakor.ElectricidadChispas.data;
 
-import com.ibrakor.ElectricidadChispas.domain.models.Clientes;
+import com.ibrakor.ElectricidadChispas.domain.models.Cliente;
 
 import java.util.List;
 import java.util.TreeMap;
 
 public class CustomerDataStore {
     private static CustomerDataStore instance = null;
-    private TreeMap<String, Clientes> dataStore = new TreeMap<>();
+    private TreeMap<String, Cliente> dataStore = new TreeMap<>();
 
-    public void save(Clientes clientes){
-        dataStore.put(clientes.getCodcliente(), clientes);
+    public void save(Cliente cliente){
+        dataStore.put(cliente.getCodcliente(), cliente);
     }
-    public void delete(Clientes clientes){
-        dataStore.remove(clientes.getCodcliente(), clientes);
+    public void delete(Cliente cliente){
+        dataStore.remove(cliente.getCodcliente(), cliente);
     }
-    public List<Clientes> getAll() {
+    public List<Cliente> getAll() {
         return dataStore.values().stream().toList();
     }
 
-    public Clientes findById(String codigo) {
+    public Cliente findById(String codigo) {
         return dataStore.get(codigo);
     }
 

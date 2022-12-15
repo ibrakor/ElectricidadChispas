@@ -1,6 +1,6 @@
 package com.ibrakor.ElectricidadChispas.domain.models;
 
-public interface Clientes  {
+public interface Cliente {
 
     String getCodcliente();
     String getNombre();

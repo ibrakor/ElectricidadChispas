@@ -1,6 +1,6 @@
 package com.ibrakor.ElectricidadChispas.domain.models;
 
-public class Sociedades implements Clientes {
+public class Sociedades implements Cliente {
     private Integer codcliente;
     private String razonsocial;
     private String cif;

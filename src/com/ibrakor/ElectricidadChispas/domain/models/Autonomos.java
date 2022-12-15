@@ -1,6 +1,6 @@
 package com.ibrakor.ElectricidadChispas.domain.models;
 
-public class Autonomos implements Clientes {
+public class Autonomos implements Cliente {
     private String codcliente;
     private String nombre;
     private String apellido;
